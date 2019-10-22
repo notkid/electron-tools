@@ -16,6 +16,7 @@ function App() {
         </p>
       </header>
       <Button />
+      <footer className="App-footer">{`${new Date().getDate()}`}</footer>
     </div>
   );
 }

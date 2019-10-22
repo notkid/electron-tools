@@ -17,6 +17,14 @@
   color: white;
 }
 
+.App-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 122, 204);
+}
+
 .App-link {
   color: #09d3ac;
   font-size: 1rem;
