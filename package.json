@@ -2,9 +2,18 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "public/electron.js",
+  "homepage": "./",
   "scripts": {
-    "start": "electron ."
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "react-build": "react-scripts build",
+    "electron-start": "electron .",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "electron-build": "electron-builder",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "react-start": "react-scripts start"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +26,29 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^6.0.12"
+    "concurrently": "^5.0.0",
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0",
+    "wait-on": "^3.3.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "cross-env": "^6.0.3",
+    "electron-is-dev": "^1.1.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
