@@ -27,7 +27,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "concurrently": "^5.0.0",
-    "electron": "^7.0.0",
+    "electron": "^15.5.5",
     "electron-builder": "^21.2.0",
     "wait-on": "^3.3.0"
   },
